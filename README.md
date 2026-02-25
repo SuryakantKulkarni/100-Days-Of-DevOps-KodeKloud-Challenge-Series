@@ -54,7 +54,7 @@ This repository shows my 100-day hands-on DevOps learning journey with KodeKloud
 
 | Day | Task (Exact KodeKloud Name) | Category | Key Skill | Solution |
 |-----|------------------------------|----------|-----------|----------|
-| Day 1  | Linux User Setup with Non-interactive Shell | Linux | User & shell management | [View](./Day-01.md) |
+| Day 1  | Linux User Setup with Non-interactive Shell | Linux | User & shell management | [View](./Tasks/Day-01.md) |
 | Day 2  | Temporary User Setup with Expiry Date | Linux | User lifecycle management | [View](./days/002.md) |
 | Day 3  | Secure SSH Root Access | Linux | SSH hardening | [View](./days/003.md) |
 | Day 4  | Script Execute Permissions | Linux | File permissions | [View](./days/004.md) |
