@@ -115,4 +115,4 @@ spec:
 
 ---
 
-**Next Challenge: ** [Day 57 →](Tasks/Day-57.md)
+**Next Challenge:** [Day 57 →](Tasks/Day-57.md)
