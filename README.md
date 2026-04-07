@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Days Completed](https://img.shields.io/badge/Days%20Completed-62%2F100-brightgreen?style=for-the-badge&logo=checkmarx)](/)
+[![Days Completed](https://img.shields.io/badge/Days%20Completed-63%2F100-brightgreen?style=for-the-badge&logo=checkmarx)](/)
 [![Platform](https://img.shields.io/badge/Platform-KodeKloud-blue?style=for-the-badge&logo=kubernetes)](https://kodekloud.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![LinkedIn](https://img.shields.io/badge/Follow%20on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](your-linkedin-link)
