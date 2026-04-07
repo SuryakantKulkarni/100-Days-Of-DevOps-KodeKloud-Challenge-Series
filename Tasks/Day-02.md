@@ -11,14 +11,14 @@ Create a user named `siva` on `App Server 3` in Stratos Datacenter. Set the expi
 
 ## Step-by-Step Implementation  
 
-## Step 1: Connect to Server  
+### Step 1: Connect to Server  
 ```bash
 ssh banner@stapp03
 ```
 #### Explanation:
 The `ssh` command is used to connect to a remote server securely. We run this to access the system where the user needs to be created.
 
-## Step 2: Create User with Expiry Date
+### Step 2: Create User with Expiry Date
 ```bash
 sudo useradd -e 2026-12-07 siva
 ```
@@ -28,7 +28,7 @@ This command creates a new user with an expiry date.
 - `-e` → sets account expiry date
 We run this so that the account is automatically disabled after the given date.
 
-## Step 3: Verify Expiry Date
+### Step 3: Verify Expiry Date
 ```bash
 sudo chage -l siva
 ```
@@ -56,7 +56,9 @@ The `chage -l` command shows account aging details. We run this to confirm that 
 - `passwd -S` → Check password status
 - `userdel -r` → Remove user and home directory
 
-### Best Practices
+---
+
+## Best Practices
 - Avoid permanent access for temporary users
 - Combine expiry with non-interactive shell
 - Follow least privilege principle
