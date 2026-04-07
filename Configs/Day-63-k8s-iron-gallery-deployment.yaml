@@ -1,4 +1,3 @@
-cat > /tmp/iron-gallery.yml << 'EOF'
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -99,4 +98,3 @@ spec:
       port: 80
       targetPort: 80
       nodePort: 32678
-EOF
