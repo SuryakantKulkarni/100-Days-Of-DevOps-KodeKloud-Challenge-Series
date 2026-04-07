@@ -14,14 +14,14 @@ The Nautilus DevOps team is working to deploy some tools in Kubernetes cluster. 
 
 ## Step-by-Step Implementation  
 
-## Step 1: Verify Secret File  
+### Step 1: Verify Secret File  
 ```bash
 cat /opt/ecommerce.txt
 ```
 #### Explanation:
 The `cat` command is used to read file content. We run this to check the data that will be stored inside the Kubernetes secret.
 
-## Step 2: Create Secret
+### Step 2: Create Secret
 ```bash
 kubectl create secret generic ecommerce --from-file=/opt/ecommerce.txt
 ```
@@ -31,7 +31,7 @@ kubectl create secret generic ecommerce --from-file=/opt/ecommerce.txt
 - `--from-file` → reads data from file
 We run this to securely store sensitive data in Kubernetes.
 
-## Step 3: Verify Secret
+### Step 3: Verify Secret
 ```bash
 kubectl get secret ecommerce
 kubectl describe secret ecommerce
@@ -41,7 +41,7 @@ kubectl describe secret ecommerce
 `kubectl describe secret` shows detailed information
 We run this to confirm the secret was created successfully.
 
-## Step 4: Create YAML File for Pod
+### Step 4: Create YAML File for Pod
 ```bash
 cat > /tmp/secret-xfusion.yml << 'EOF'
 YAML File Content
@@ -50,21 +50,21 @@ EOF
 #### Explanation:
 The cat command with > creates a YAML file. This file defines Pod configuration, Secret volume and Container setup. We run this to configure how the secret will be used inside the pod.
 
-## Step 5: Apply YAML File
+### Step 5: Apply YAML File
 ```bash
 kubectl apply -f /tmp/secret-xfusion.yml
 ```
 #### Explanation:
 `kubectl apply -f` reads the YAML file and creates the pod. We run this to deploy the pod with the mounted secret.
 
-## Step 6: Verify Pod Status
+### Step 6: Verify Pod Status
 ```bash
 kubectl get pod secret-xfusion -w
 ```
 #### Explanation:
 `kubectl get pod -w` watches pod status in real time. We run this to ensure the pod reaches Running state.
 
-## Step 7: Verify Secret Inside Container
+### Step 7: Verify Secret Inside Container
 ```bash
 kubectl exec secret-xfusion -c secret-container-xfusion -- ls /opt/demo/
 kubectl exec secret-xfusion -c secret-container-xfusion -- cat /opt/demo/ecommerce.txt
