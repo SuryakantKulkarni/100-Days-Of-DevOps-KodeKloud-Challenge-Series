@@ -47,7 +47,11 @@ Opens the SSH configuration file using the vi editor. We run this to modify SSH 
 ### Step 5: Disable Root Login
 Inside the file, update:
 ```bash
-PermitRootLogin no
+#LoginGraceTime 2m
+PermitRootLogin yes <- Change this from yes to no
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
 ```
 #### Explanation:
 This setting controls whether root login via SSH is allowed. We change it to no to disable direct root login and improve security.
