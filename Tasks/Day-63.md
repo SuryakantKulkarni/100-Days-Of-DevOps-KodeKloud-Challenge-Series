@@ -105,4 +105,16 @@ kubectl get svc -n iron-namespace-xfusion
 #### Explanation:
 `kubectl get svc` lists services in the cluster. We run this to check if services are exposing the application correctly.
 
+---
+
+## Key Learnings 
+
+- Kubernetes manages applications using declarative configurations  
+- Services enable communication between different components  
+- Proper labels are critical for resource connectivity  
+- Resource limits improve stability and performance  
+- Real-world apps always follow multi-tier architecture
+
+---
+
 **Next Challenge**: [Day 64 →](Day-64.md)
