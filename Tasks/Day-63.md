@@ -61,44 +61,46 @@ kubectl create namespace iron-namespace-xfusion
 `kubectl create namespace` used to create a new namespace. A namespace is used to isolate resources inside the cluster.
 We run this to keep all Iron Gallery app components organized and separate from other workloads.
 
-## Step 2: Create Full Manifest File
+### Step 2: Create Full Manifest File
 ```bash
 cat > /tmp/iron-gallery.yml << 'EOF'
-# YAML content
+# YAML file content
 EOF
 ```
 #### Explanation:
 Creates a YAML file containing all Kubernetes resources (namespace, deployments, services).
 
-## Step 3: Apply the Manifest
+Copy-Paste contents from this [YAML file - Day 63 →](Configs/Day-63-k8s-iron-gallery-deployment.yaml)
+
+### Step 3: Apply the Manifest
 ```bash
 kubectl apply -f /tmp/iron-gallery.yml
 ```
 #### Explanation:
 `kubectl apply -f` reads the YAML file and creates resources in the cluster. It ensures all configurations are applied as defined.
 
-## Step 4: Verify Namespace
+### Step 4: Verify Namespace
 ```bash
 kubectl get namespace iron-namespace-xfusion
 ```
 #### Explanation:
 `kubectl get namespace` lists namespaces. We use it to confirm that our namespace was created successfully.
 
-## Step 5: Verify Deployments
+### Step 5: Verify Deployments
 ```bash
 kubectl get deployments -n iron-namespace-xfusion
 ```
 #### Explanation:
 `kubectl get deployments` shows deployment status. The `-n` flag specifies the namespace. We run this to check if application and database deployments are created and running.
 
-## Step 6: Verify Pods
+### Step 6: Verify Pods
 ```bash
 kubectl get pods -n iron-namespace-xfusion
 ```
 #### Explanation:
 `kubectl get pods` lists all running containers (pods). We use it to verify that pods are created and in running state.
 
-## Step 7: Verify Services
+### Step 7: Verify Services
 ```bash
 kubectl get svc -n iron-namespace-xfusion
 ```
