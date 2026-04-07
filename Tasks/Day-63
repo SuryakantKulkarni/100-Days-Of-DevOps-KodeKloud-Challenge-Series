@@ -1,0 +1,18 @@
+# Day 01 – Linux User Setup with Non-interactive Shell
+
+---
+
+## Task Overview
+Create a Linux service user with **no interactive shell access**. This type of user is commonly used for running services or automation tasks and improves system security by preventing direct logins.
+
+---
+
+## Objective  
+- Create a service/system user  
+- Assign a non-interactive shell  
+- Ensure the home directory is created  
+- Validate that interactive login is disabled
+
+---
+
+## Step-by-Step Implementation 
