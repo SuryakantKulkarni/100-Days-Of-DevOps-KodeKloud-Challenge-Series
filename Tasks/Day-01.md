@@ -126,4 +126,4 @@ sudo userdel -r user-name
 - Non-interactive shells improve server security
 - User management is a core Linux admin skill
 
-**Next Challenge**: [Day 02 →](Day-02.md)
+**Next Challenge**: [Day 02 →](Tasks/Day-02.md)
