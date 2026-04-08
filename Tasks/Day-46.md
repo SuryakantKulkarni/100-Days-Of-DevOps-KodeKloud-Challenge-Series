@@ -46,24 +46,26 @@ The Nautilus Application development team recently finished development of one o
 ssh steve@stapp02.stratos.xfusioncorp.com
 ```
 #### Explanation:
-Connect to App Server 2 using SSH. We run this to access deployment environment.
+Establish an SSH connection to Application Server 2 in the Stratos Datacenter. This server will host the two-tier application stack consisting of a web server and database server.
 
 ### Step 2: Create Directory
 ```bash
 sudo mkdir -p /opt/security
 ```
 #### Explanation:
-mkdir creates directory for compose file.
+The `mkdir` command creates directory for Docker Compose configuration file at the required path /opt/security.
 - `-p` ensures directory is created if not exists.
+  
+The `sudo` command provides elevated privileges needed to create files in system directories. 
 
 ### Step 3: Create Docker Compose File
 ```bash
 sudo tee /opt/security/docker-compose.yml > /dev/null << 'EOF'
-# docker-compose content
+# docker-compose file content
 EOF
 ```
 #### Explanation:
-Creates compose file using tee. We define services, ports, volumes, and environment variables.
+This creates docker compose file using `tee` command. We define services, ports, volumes, and environment variables.
 
 Copy-Paste content from YAML File: [Day-46 Docker Compose File →](Configs/Day-46-docker-Deploy-App-on-Docker.yml)
 
@@ -73,8 +75,9 @@ cd /opt/security
 sudo docker compose up -d
 ```
 #### Explanation:
-- `docker compose` up → starts services
-- `-d` → runs in background
+The `docker compose up` command creates and starts both services (web and db) defined in the configuration.
+- `-d` flag runs containers in detached mode, allowing them to run in the background.
+  
 We run this to deploy application stack.
 
 ### Step 5: Verify Containers
@@ -82,14 +85,16 @@ We run this to deploy application stack.
 sudo docker ps
 ```
 #### Explanation:
-docker ps lists running containers. We run this to confirm both services are running.
+The `docker ps` command lists running containers. We run this to confirm both services are running.
 
 ### Step 6: Test Application
 ```bash
 curl http://localhost:6300/
 ```
 #### Explanation:
-Sends HTTP request to web service. We run this to verify application is accessible.
+Verify the PHP/Apache web server is responding to HTTP requests on the mapped port 6300. 
+
+The `curl` command should return HTML content or PHP output. 
 
 ---
 
@@ -115,11 +120,24 @@ services:
     volumes:
       - /var/lib/mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: R00t@Secure#2024
+      MYSQL_ROOT_PASSWORD: your-root-password
       MYSQL_DATABASE: database_blog
       MYSQL_USER: blog_admin
-      MYSQL_PASSWORD: Bl0g@Secure#2024
+      MYSQL_PASSWORD: your-user-password
 ```
+This Docker Compose file defines a simple 2-tier application with a web server and a database.
+
+The **web service** uses the `php:8.2-apache` image, which includes PHP and Apache together. The container is named `php_blog`. It runs on port `80` inside the container, which is mapped to port `6300` on the host, so you can access the app using `http://localhost:6300`. A volume is mounted from /var/www/html on the host to the same path in the container, allowing your PHP files to be served directly.
+
+The **db service** uses the `mariadb:latest` image and is named `mysql_blog`. It exposes port `3306` for database access. A volume is mounted at `/var/lib/mysql` to store database data on the host, so data is not lost when the container stops.
+
+Environment variables are used to configure the database:
+
+`MYSQL_ROOT_PASSWORD` sets the root password
+`MYSQL_DATABASE` creates a database named `database_blog`
+`MYSQL_USER` and `MYSQL_PASSWORD` create a user (`blog_admin`) with access to that database
+
+The web service depends on the db service, so the database starts first.
 
 ---
 
@@ -131,5 +149,7 @@ services:
 - Essential for real-world DevOps deployments
 
 ---
+
+**Previous Challenge** [← Day 45](Tasks/Day-45.md) 
 
 **Next Challenge:** [Day 47 →](Tasks/Day-47.md)
