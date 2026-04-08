@@ -3,7 +3,7 @@
 ---
 
 ## Task Overview  
-A python app needed to be Dockerized, and then it needs to be deployed on `App Server 1`. We have already copied a `requirements.txt` file (having the app dependencies) under `/python_app/src/` directory on `App Server 1`. Further complete this task as per details mentioned below:
+A python app needs to be Dockerized, and then it needs to be deployed on `App Server 1`. We have already copied a `requirements.txt` file (having the app dependencies) under `/python_app/src/` directory on `App Server 1`. Further complete this task as per details mentioned below:
 
 - Create a `Dockerfile` under `/python_app` directory:
 
@@ -29,7 +29,9 @@ A python app needed to be Dockerized, and then it needs to be deployed on `App S
 ssh tony@stapp01.stratos.xfusioncorp.com
 ```
 #### Explanation:
-Connects to application server using SSH. We run this to access the environment where app is deployed.
+Establish an SSH connection to Application Server 1 in the Stratos Datacenter. This server contains the Python application source code that needs to be containerized.
+
+We run this to access the environment where the app is deployed.
 
 ### Step 2: Verify Application Files
 ```bash
@@ -37,7 +39,7 @@ cat /python_app/src/requirements.txt
 ls /python_app/src/
 ```
 #### Explanation:
-Checks dependencies and source files. We run this to confirm required files exist.
+These commands checks dependencies and source files. We run this to confirm required files exist.
 
 ### Step 3: Create Dockerfile
 ```bash 
@@ -46,7 +48,7 @@ cat > /python_app/Dockerfile << 'EOF'
 EOF
 ```
 #### Explanation:
-Creates Dockerfile using cat. We define how container image will be built.
+Creates Dockerfile using `cat`. We define how container image will be built.
 
 ### Step 4: Build Docker Image
 ```bash
@@ -54,11 +56,18 @@ cd /python_app
 docker build -t nautilus/python-app .
 ```
 #### Explanation:
-`docker build` -t builds Docker image from Dockerfile.
-- `-t` → tag image
-- `.` → current directory
+The `docker build` command builds Docker image from Dockerfile.
+- `-t` flag tags the image with the specified name, making it easy to reference later.
+- `.` argument specifies the build context as the current directory.
 
-### Step 5: Run Container
+### Step 5: Verify Image
+```bash
+docker images | grep nautilus/python-app
+```
+#### Explanation:
+The `docker images` command lists all images, and `grep` filters the output.
+
+### Step 6: Run Container
 ```bash
 docker run -d \
 --name pythonapp_nautilus \
@@ -66,19 +75,19 @@ docker run -d \
 nautilus/python-app
 ```
 #### Explanation:
-`docker run` runs container in detached mode.
-- `-d` → background
-- `--name` → container name
-- `-p` → port mapping
+`docker run` command runs a container from the docker image with specific configuration.
+- `-d` flag runs the container in detached mode (background)
+- `--name` assigns the exact container name as required
+- `-p` maps host port to container port, making the application accessible externally
 
-### Step 6: Verify Container
+### Step 7: Verify Container
 ```bash
 docker ps | grep pythonapp_nautilus
 ```
 #### Explanation:
-docker ps lists running containers. We run this to confirm container is running.
+`docker ps` command lists running containers. We run this to confirm container is running.
 
-### Step 7: Test Application
+### Step 8: Test Application
 ```bash
 curl http://localhost:8098/
 ```
@@ -108,5 +117,7 @@ CMD ["python", "server.py"]
 - Essential DevOps skill
 
 ---
+
+**Previous Challenge** [← Day 46](Tasks/Day-46.md) 
 
 **Next Challenge:** [Day 48 →](Tasks/Day-48.md)
