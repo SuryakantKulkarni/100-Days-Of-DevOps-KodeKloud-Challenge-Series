@@ -22,7 +22,7 @@ cat > /tmp/pod-httpd.yml << 'EOF'
 EOF
 ```
 #### Explanation:
-Creates a YAML file using `cat`. We define pod configuration, container, and labels.
+Creates a YAML file using `cat`. We define the pod configuration, container, and labels.
 
 Copy-Paste content from YAML File: [Day-48 YAML File →](Configs/Day-48-k8s-Deploy-Pods-in-Kubernetes.yaml)
 
@@ -31,33 +31,33 @@ Copy-Paste content from YAML File: [Day-48 YAML File →](Configs/Day-48-k8s-Dep
 kubectl apply -f /tmp/pod-httpd.yml
 ```
 #### Explanation:
-`kubectl apply -f` creates the pod in Kubernetes. We run this to deploy the application.
+`kubectl apply -f` command creates the pod in the Kubernetes cluster. We run this to deploy the application.
 
 ### Step 3: Verify Pod
 ```bash
 kubectl get pod pod-httpd
 ```
 #### Explanation:
-Checks pod status. We run this to confirm pod is running.
+`kubectl get pod` command checks the status of the specific pod. We run this to confirm pod is running.
 
 ### Step 4: Verify Labels
 ```bash
 kubectl get pod pod-httpd --show-labels
 ```
 #### Explanation:
-Displays labels assigned to pod. We run this to confirm correct labeling.
+`--show-labels` displays labels assigned to the pod. We run this to confirm correct labeling.
 
 ### Step 5: Detailed Info
 ```bash
 kubectl describe pod pod-httpd
 ```
 #### Explanation:
-Shows full pod details including events and configuration.
+`kubectl describe pod` command shows full pod details including events and configuration.
 
 ---
 
 ## Config / YAML
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -68,16 +68,20 @@ spec:
   containers:
     - name: httpd-container
       image: httpd:latest
+      ports:
+        - containerPort: 80
 ```
 
 ---
 
 ## Key Learnings
-- Pods are foundation of Kubernetes
+- Pods are the foundation of Kubernetes
 - Labels are important for resource management
 - Basic deployment starts with pods
 - Understanding pods is essential before deployments
 
 ---
+
+**Previous Challenge** [← Day 47](Tasks/Day-47.md) 
 
 **Next Challenge:** [Day 49 →](Tasks/Day-49.md)
