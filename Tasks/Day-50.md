@@ -33,26 +33,26 @@ Copy-Paste content from YAML File: [Day-50 YAML File →](Configs/Day-50-k8s-Set
 kubectl apply -f /tmp/httpd-pod.yml
 ```
 #### Explanation:
-`kubectl apply -f` creates the pod. We run this to deploy the application.
+`kubectl apply -f` command creates the pod in the Kubernetes cluster. We run this to deploy the application.
 
 ### Step 3: Verify Pod Status
 ```bash
 kubectl get pod httpd-pod
 ```
 #### Explanation:
-Checks if pod is running successfully.
+`kubectl get pod` command checks the status of the specific pod. We run this to confirm the pod is running.
 
 ### Step 4: Verify Resource Limits
 ```bash
 kubectl describe pod httpd-pod | grep -A6 "Limits\|Requests"
 ```
 #### Explanation:
-Displays resource configuration. We run this to confirm limits and requests are applied.
+`kubectl describe pod` command displays the resource configuration. We run this to confirm limits and requests are applied.
 
 ---
 
 ## Config / YAML
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -80,5 +80,7 @@ spec:
 - Essential concept in production DevOps
 
 ---
+
+**Previous Challenge** [← Day 49](Tasks/Day-49.md) 
 
 **Next Challenge:** [Day 51 →](Tasks/Day-51.md)
