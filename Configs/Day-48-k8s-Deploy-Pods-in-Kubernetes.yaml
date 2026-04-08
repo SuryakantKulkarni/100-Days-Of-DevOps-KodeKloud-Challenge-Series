@@ -8,3 +8,5 @@ spec:
   containers:
     - name: httpd-container
       image: httpd:latest
+  ports:
+    - containerPort: 80
