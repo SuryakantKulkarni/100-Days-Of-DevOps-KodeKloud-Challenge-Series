@@ -77,4 +77,4 @@ We run this step only if Ansible is not available globally.
 
 ---
 
-**Next Challenge**: [Day 09 →](Tasks/Day-09.md)
+[Day 09 →](Tasks/Day-09.md)
