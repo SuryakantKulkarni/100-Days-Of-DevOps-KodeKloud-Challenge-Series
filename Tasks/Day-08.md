@@ -74,7 +74,3 @@ We run this step only if Ansible is not available globally.
 - pip3 provides version control flexibility  
 - PATH configuration is critical for global access  
 - Essential tool for DevOps automation  
-
----
-
-[Day 09 →](Tasks/Day-09.md)
