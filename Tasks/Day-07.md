@@ -80,29 +80,9 @@ We run these commands to confirm that SSH authentication is working without a pa
 
 ---
 
-## Key Concepts  
-
-### SSH Key Authentication  
-- Uses key pair instead of passwords  
-- More secure and automated  
-- Widely used in DevOps workflows  
-
-### Public & Private Key  
-- Private key → stays on client (secure)  
-- Public key → shared with servers  
-
----
-
 ## Key Learnings  
 
 - SSH keys replace passwords securely  
 - ssh-copy-id simplifies setup  
 - Password-less SSH enables automation  
 - Essential skill for DevOps engineers  
-
----
-
-**Next Challenge**: [Day 08 →](Day-008.md)
-
-
-
