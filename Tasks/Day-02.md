@@ -23,9 +23,9 @@ The `ssh` command is used to connect to a remote server securely. We run this to
 sudo useradd -e 2026-12-07 siva
 ```
 #### Explanation:
-This command creates a new user with an expiry date.
-- `useradd` → creates a new user
-- `-e` → sets account expiry date
+The `useradd` command creates a new user with an expiry date.
+- `-e` flag sets account expiry date
+  
 We run this so that the account is automatically disabled after the given date.
 
 ### Step 3: Verify Expiry Date
@@ -34,27 +34,6 @@ sudo chage -l siva
 ```
 #### Explanation:
 The `chage -l` command shows account aging details. We run this to confirm that the expiry date is set correctly.
-
----
-
-## Key Concepts
-
-### User Account Expiry
-- **Purpose:** Automatically disable accounts after a set date
-- **Format:** YYYY-MM-DD (ISO standard)
-- **Check Expiry:** chage -l username
-- **Extend Expiry:** chage -E <future-date> username
-
-### Optional Flags
-- `-s` /sbin/nologin → Disable shell access
-- `-m` → Create home directory
-- `-d` /path → Custom home directory
-
-### Additional Commands
-- `chage -E <date>` → Modify expiry date
-- `usermod -e <date>` → Update existing user expiry
-- `passwd -S` → Check password status
-- `userdel -r` → Remove user and home directory
 
 ---
 
@@ -69,7 +48,3 @@ The `chage -l` command shows account aging details. We run this to confirm that 
 - Reduces risk of unused active accounts
 - Important for managing temporary users in production
 - Simple Linux features can improve system security
-
----
-
-**Next Challenge:** [Day 03 →](Tasks/Day-03.md)
