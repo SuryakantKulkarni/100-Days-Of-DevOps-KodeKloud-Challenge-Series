@@ -13,7 +13,7 @@ A new MySQL server needs to be deployed on Kubernetes cluster. The Nautilus DevO
 
 4. Create a `NodePort` type service named `mysql` and set nodePort to `30007`.
 
-5. Create a secret named `mysql-root-pass` having a key pair value, where key is `password` and its value is `YUIidhb667`, create another secret named `mysql-user-pass` having some key pair values, where frist key is `username` and its value is `kodekloud_rin`, second key is `password` and value is `BruCStnMT5`, create one more secret named `mysql-db-url`, key name is `database` and value is `kodekloud_db7`
+5. Create a secret named `mysql-root-pass` having a key pair value, where key is `password` and its value is `YUIidhb667`, create another secret named `mysql-user-pass` having some key pair values, where first key is `username` and its value is `kodekloud_rin`, second key is `password` and value is `BruCStnMT5`, create one more secret named `mysql-db-url`, key name is `database` and value is `kodekloud_db7`
 
 6. Define some Environment variables within the container:
 
@@ -21,7 +21,7 @@ A new MySQL server needs to be deployed on Kubernetes cluster. The Nautilus DevO
 
    - name: `MYSQL_DATABASE`, should pick value from secretKeyRef name: `mysql-db-url` and key: `database`
 
-   - name: `MYSQL_USER`, should pick value from secretKeyRef name: `mysql-user-pass` key key: `username`
+   - name: `MYSQL_USER`, should pick value from secretKeyRef name: `mysql-user-pass` and key: `username`
 
    - name: `MYSQL_PASSWORD`, should pick value from secretKeyRef name: `mysql-user-pass` and key: `password`
 
@@ -48,7 +48,7 @@ cat > /tmp/mysql-deployment.yml << 'EOF'
 EOF
 ```
 #### Explanation:
-This command creates a YAML file using `cat`. In this file, we define Secrets, PV, PVC, Deployment, and Service. Keeping everything in one file makes it easier to manage and deploy all resources together.
+This command creates a YAML file using `cat`. In this file, we define Secrets, PersistentVolume, PersistentVolumeClaim, Deployment, and Service. Keeping everything in one file makes it easier to manage and deploy all resources together.
 
 Copy-Paste content from YAML File: [Day-66 YAML File →](Configs/Day-66-k8s-Deploy-MySQL.yaml)
 
@@ -57,21 +57,21 @@ Copy-Paste content from YAML File: [Day-66 YAML File →](Configs/Day-66-k8s-Dep
 kubectl apply -f /tmp/mysql-deployment.yml
 ```
 #### Explanation:
-The `kubectl apply -f` command reads the YAML file and apply the complete MySQL configuration to the Kubernetes cluster. It ensures that the cluster state matches the configuration in the file. We run this to deploy MySQL.
+The `kubectl apply -f` command reads the YAML file and applies the complete MySQL configuration to the Kubernetes cluster. It ensures that the cluster state matches the configuration in the file. We run this to deploy MySQL.
 
 ### Step 4: Verify Deployment
 ```bash
 kubectl get deployments
 ```
 #### Explanation:
-The `kubectl get deployment` command check that the MySQL deployment was created successfully and has the desired number of replicas available. 
+The `kubectl get deployments` command checks that the MySQL deployment was created successfully and has the desired number of replicas available. 
 
 ### Step 5: Verify Pods
 ```bash
 kubectl get pods
 ```
 #### Explanation:
-The `kubectl get pods` command lists the pods created by the deployment. We run this to ensure the MySQL pod is in Running state with readiness 1/1.
+The `kubectl get pods` command lists all the pods created by the deployment. We run this to ensure the MySQL pod is in Running state with readiness 1/1.
 
 ### Step 6: Verify PV & PVC
 ```bash
@@ -90,7 +90,7 @@ We run these commands to verify the `PersistentVolume` was created and the `Pers
 kubectl get svc
 ```
 #### Explanation:
-The `kubectl get svc` command lists services in the kubernetes cluster. We run this to ensure the MySQL service was created with the correct type and port configuration.
+The `kubectl get svc` command lists services in the Kubernetes cluster. We run this to ensure the MySQL service was created with the correct type and port configuration.
 
 ### Step 8: Verify Secrets
 ```bash
@@ -109,7 +109,7 @@ kubectl exec -it $POD -- mysql -u root -p
 #### Explanation:
 The `POD=$(kubectl get pods -l app=mysql -o jsonpath='{.items[0].metadata.name}')` command assigns the name of a running MySQL pod to a variable called POD.
 - `POD=`creates a shell variable and stores the value (pod name) to use later instead of typing manually.
-- `kubectl get pods` command lists of all the pods running in the cluster.
+- `kubectl get pods` command lists all the pods running in the cluster.
 - `-l` flag and `app=mysql` option filters the pods and returns only those that have the label app=mysql.
 - `-o jsonpath='{.items[0].metadata.name}'` option extracts only the name of the first pod from the output instead of showing full details.
 - `$()` syntax executes the command inside it and stores the result in the variable POD.
