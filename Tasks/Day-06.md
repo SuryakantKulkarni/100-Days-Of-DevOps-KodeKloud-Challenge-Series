@@ -7,11 +7,6 @@ The `Nautilus` system admins team has prepared scripts to automate several day-t
 
 - Install `cronie` package on all `Nautilus` app servers and start `crond` service.
 - Add a cron `*/5 * * * * echo hello > /tmp/cron_text` for `root` user.
-
-### Servers:
-- `stapp01.stratos.xfusioncorp.com` → user: `tony`  
-- `stapp02.stratos.xfusioncorp.com` → user: `steve`  
-- `stapp03.stratos.xfusioncorp.com` → user: `banner`
   
 ---
 
@@ -29,7 +24,7 @@ The `ssh` command is used to connect to the remote server. We run this to access
 sudo yum install cronie -y
 ```
 #### Explanation:
-The `yum` install cronie` command installs the cron service package on the system. Cronie provides the crond daemon and crontab utilities required to schedule and run automated tasks.
+The `yum` install` command installs the cron service package on the system. Cronie provides the crond daemon and crontab utilities required to schedule and run automated tasks.
 - `-y` flag automatically confirms the installation without asking for user input, making the process faster and suitable for automation.
 
 We run this command to ensure the system has the required service to schedule background jobs.
@@ -39,7 +34,7 @@ We run this command to ensure the system has the required service to schedule ba
 sudo systemctl enable crond
 ```
 #### Explanation:
-The `systemctl enable crond` command configures the cron service to start automatically whenever the system boots.
+The `systemctl enable` command configures the cron service to start automatically whenever the system boots.
 - `enable` option creates symbolic links in systemd so that the service is loaded during startup.
 
 We run this command to make sure scheduled jobs continue working even after system reboot.
@@ -49,7 +44,7 @@ We run this command to make sure scheduled jobs continue working even after syst
 sudo systemctl start crond
 ```
 #### Explanation:
-The `systemctl start crond` command starts the cron daemon immediately without waiting for a reboot. This command launches the background process responsible for reading crontab files and executing scheduled tasks.
+The `systemctl start` command starts the cron daemon immediately without waiting for a reboot. This command launches the background process responsible for reading crontab files and executing scheduled tasks.
 
 We run this command to activate the cron service so jobs can start executing.
 
@@ -153,11 +148,7 @@ The cron schedule consists of 5 time fields followed by the command:
 0 6,18 * * * command
 ```
 
-## Cron Types:
-
-- User crontabs: `/var/spool/cron/username` (managed via `crontab` command)
-- System crontab: `/etc/crontab` (edited directly, includes username field)
-- Cron directories: `/etc/cron.d/`, `/etc/cron.daily/`, `/etc/cron.hourly/`, `/etc/cron.weekly/`, `/etc/cron.monthly/`
+---
 
 **Automation Script (Optional):**
 
@@ -204,7 +195,3 @@ echo "=== Setup Complete ==="
 - Service must be active for jobs to run  
 - Proper syntax is critical  
 - Widely used in production systems  
-
----
-
-Next Challenge: [Day 07 →](Tasks/Day-07.md)
