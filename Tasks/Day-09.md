@@ -35,7 +35,7 @@ We run this command to identify the root cause of the service failure by analyzi
 sudo systemctl status mariadb
 ```
 #### Explanation:  
-The `systemctl status mariadb` command checks the current state of the MariaDB service. The output shows whether the service is running, stopped, or failed.
+The `systemctl status` command checks the current state of the MariaDB service. The output shows whether the service is running, stopped, or failed.
 
 The `sudo` keyword is used because checking system services requires elevated privileges.
 
@@ -46,7 +46,7 @@ We run this command to confirm that the MariaDB service is down.
 sudo systemctl start mariadb
 ```
 #### Explanation:  
-The `systemctl start mariadb` command attempts to start the MariaDB service. If the service fails, it will provide error messages that help in troubleshooting.
+The `systemctl start` command attempts to start the MariaDB service. If the service fails, it will provide error messages that help in troubleshooting.
 
 We run this command to test whether the issue is temporary or due to a configuration problem.
 
@@ -101,7 +101,7 @@ We run this command to ensure MariaDB can access and manage its files.
 sudo systemctl restart mariadb
 ```
 #### Explanation:  
-The `systemctl restart mariadb` command stops and then starts the MariaDB service. This ensures that all changes (like directory and permissions) are applied.
+The `systemctl restart` command stops and then starts the MariaDB service. This ensures that all changes (like directory and permissions) are applied.
 
 We run this command to reinitialize MariaDB with correct configuration.
 
@@ -119,7 +119,7 @@ We run this command to confirm that the issue is resolved.
 sudo systemctl enable mariadb
 ```
 #### Explanation:  
-The `systemctl enable mariadb` command ensures the service starts automatically on system boot.
+The `systemctl enable` command ensures the service starts automatically on system boot.
 
 We run this command to make the configuration persistent across reboots.
 
@@ -137,7 +137,3 @@ We run this command to make the configuration persistent across reboots.
 - Services depend on correct file structure  
 - Permissions are critical for database services  
 - Systematic troubleshooting is essential  
-
----
-
-**Next Challenge**: [Day 10 →](Day-10.md)
