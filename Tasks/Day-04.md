@@ -13,7 +13,7 @@ Your task is to grant executable permissions to the `/tmp/xfusioncorp.sh` script
 
 ### Step 1: Connect to Server and Switch to Root User 
 ```bash
-ssh tony@stapp01.stratos.xfusioncorp.com
+ssh tony@app-server-1
 ```
 #### Explanation:
 The `ssh` command is used to connect to a remote server securely.
@@ -41,7 +41,7 @@ We run this to allow all users to read and execute the script.
 ls -lah /tmp/xfusioncorp.sh
 ```
 #### Explanation:
-We run this again to confirm that permissions are updated correctly.
+We run this command again to confirm that permissions are updated correctly.
 
 Expected output:
 ```bash
@@ -95,7 +95,3 @@ Expected output:
 - Execute permission is required for scripts
 - Proper permissions prevent misuse of files
 - Always follow least privilege principle
-
----
-
-Next Challenge: [Day 05 →](Tasks/Day-05.md) 
