@@ -129,6 +129,23 @@ We run this command to connect to the MySQL database inside the running containe
 
 After running this command, you will be asked to enter the password, and then you will enter the MySQL shell.
 
+Once inside MySQL run:
+```bash
+# Verify database was created
+SHOW DATABASES;
+
+# Verify user exists
+SELECT User FROM mysql.user;
+
+#Switch to app database
+USE kodekloud_db7;
+
+# Exit
+exit;
+```
+#### Explanation:
+This commands confirms MySQL is operational and all initialization from environment variables succeeded correctly. 
+
 ---
 
 ## Config / YAML
@@ -251,7 +268,3 @@ spec:
 - PV & PVC enable data persistence
 - Kubernetes supports full DB deployment
 - Real-world production setup concept
-
----
-
-**Next Challenge**: [Day 67 →]()
