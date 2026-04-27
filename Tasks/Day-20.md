@@ -13,6 +13,8 @@ The `Nautilus` application development team is planning to launch a new PHP-base
   
 - Once configured correctly, you can test the website using `curl http://stapp01:8093/index.php` command from jump host.
 
+`Note:` We have copied two files, `index.php` and `info.php`, under `/var/www/html` as part of the `PHP-based application` setup. Please do not modify these files.
+
 ---
 
 ## Step-by-Step Implementation  
