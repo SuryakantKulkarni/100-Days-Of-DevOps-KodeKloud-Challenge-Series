@@ -63,7 +63,3 @@ Lists running pods. We run this to ensure all pods are healthy.
 - Deployment history helps debugging
 - Always verify after rollback
 - Version control is essential in DevOps
-
----
-
-**Next Challenge:** [Day 53 →](Tasks/Day-53.md)
