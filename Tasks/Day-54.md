@@ -32,8 +32,6 @@ EOF
 #### Explanation:
 The `cat` command creates a YAML file. We define pod, containers, and shared volume configuration.
 
-Copy-Paste content from YAML File: [Day-54 YAML File →](Configs/Day-54-k8s-Kubernetes-Shared-Volumes.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/volume-share-xfusion.yml
@@ -108,7 +106,3 @@ spec:
 - Multi-container pods improve flexibility
 - Data consistency is maintained across containers
 - Important concept for real-world DevOps setups
-
----
-
-**Next Challenge:** [Day 55 →](Tasks/Day-55.md)
