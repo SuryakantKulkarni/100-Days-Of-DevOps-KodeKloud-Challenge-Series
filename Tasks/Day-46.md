@@ -43,7 +43,7 @@ The Nautilus Application development team recently finished development of one o
 
 ### Step 1: Connect to Server  
 ```bash
-ssh steve@stapp02.stratos.xfusioncorp.com
+ssh steve@stapp02
 ```
 #### Explanation:
 Establish an SSH connection to Application Server 2 in the Stratos Datacenter. This server will host the two-tier application stack consisting of a web server and database server.
@@ -99,7 +99,7 @@ The `curl` command should return HTML content or PHP output.
 ---
 
 ## Config / docker-compose.yml
-```bash
+```dockerfile
 version: '3.8'
 services:
   web:
@@ -149,7 +149,5 @@ The web service depends on the db service, so the database starts first.
 - Essential for real-world DevOps deployments
 
 ---
-
-**Previous Challenge** [← Day 45](Tasks/Day-45.md) 
 
 **Next Challenge:** [Day 47 →](Tasks/Day-47.md)
