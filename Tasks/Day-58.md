@@ -24,8 +24,6 @@ EOF
 ### Explanation:
 The `cat` command with `>` creates a YAML file. We run this to define deployment and service configuration.
 
-Copy-Paste content from YAML File: [Day-58 YAML File →](Configs/Day-58-k8s-Deploy-Grafana-on-Kubernetes-Cluster.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/grafana.yml
@@ -79,7 +77,7 @@ Gets node IP address. We use NodePort to access Grafana from browser.
 ---
 
 ## Config / YAML
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -122,7 +120,3 @@ spec:
 - NodePort enables external access
 - Labels are critical for connectivity
 - Monitoring tools are essential in DevOps
-
----
-
-**Next Challenge:** [Day 59 →](Tasks/Day-59.md)
