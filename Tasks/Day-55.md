@@ -33,8 +33,6 @@ EOF
 #### Explanation:
 The `cat` command creates a YAML file. We define pod, containers, and shared volume configuration.
 
-Copy-Paste content from YAML File: [Day-55 YAML File →](Configs/Day-55-k8s-Kubernetes-Sidecar-Containers.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/webserver.yml
@@ -106,7 +104,3 @@ spec:
 - Useful for logging and monitoring
 - Multi-container pods are powerful in Kubernetes
 - Common pattern in production systems
-
----
-
-**Next Challenge:** [Day 56 →](Tasks/Day-56.md)
