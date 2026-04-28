@@ -98,7 +98,3 @@ We run these commands to confirm that pods are running and deployment is healthy
 - kubectl commands are powerful for troubleshooting
 - Always verify changes after fixing
 - Systematic approach saves time
-
----
-
-**Next Challenge:** [Day 60 →](Tasks/Day-60.md)
