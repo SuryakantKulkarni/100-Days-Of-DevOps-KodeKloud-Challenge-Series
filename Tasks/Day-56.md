@@ -22,16 +22,12 @@ EOF
 #### Explanation:
 The `cat` command creates a YAML file. We define deployment configuration including replicas and container details.
 
-Copy-Paste content from YAML File: [Day-56 YAML File →](Configs/Day-56-k8s-Deploy-Nginx-Web-Server-on-Kubernetes.yaml)
-
 ### Step 2: Create Service YAML
 ```bash
 cat > /tmp/nginx-service.yml << 'EOF'
 # YAML content
 EOF
 ```
-Copy-Paste content from YAML File: [Day-56 YAML File →](Configs/Day-56-k8s-Deploy-Nginx-Web-Server-on-Kubernetes.yaml)
-
 #### Explanation:
 Creates a YAML file for service. This service will expose the application externally.
 
@@ -69,7 +65,7 @@ Lists services. We run this to confirm NodePort service is created.
 ## Config / YAML
 
 #### Deployment
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -89,7 +85,7 @@ spec:
           image: nginx:latest
 ```
 ### Service
-```bash
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -112,7 +108,3 @@ spec:
 - Services expose applications externally
 - Labels are critical for connectivity
 - High availability is essential in production
-
----
-
-**Next Challenge:** [Day 57 →](Tasks/Day-57.md)
