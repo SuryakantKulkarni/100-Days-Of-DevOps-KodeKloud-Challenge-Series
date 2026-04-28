@@ -50,8 +50,6 @@ EOF
 #### Explanation:
 This command creates a YAML file using `cat`. In this file, we define Secrets, PersistentVolume, PersistentVolumeClaim, Deployment, and Service. Keeping everything in one file makes it easier to manage and deploy all resources together.
 
-Copy-Paste content from YAML File: [Day-66 YAML File →](Configs/Day-66-k8s-Deploy-MySQL.yaml)
-
 ### Step 3: Apply Manifest
 ```bash
 kubectl apply -f /tmp/mysql-deployment.yml
