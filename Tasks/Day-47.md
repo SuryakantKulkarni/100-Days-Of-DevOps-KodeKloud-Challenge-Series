@@ -97,7 +97,7 @@ Sends HTTP request to application. We run this to verify app is working.
 ---
 
 ## Config / Dockerfile
-```bash
+```dockerfile
 FROM python:3.9-slim
 WORKDIR /app
 COPY src/requirements.txt .
@@ -115,9 +115,3 @@ CMD ["python", "server.py"]
 - Port mapping enables external access
 - Dockerfile design impacts performance
 - Essential DevOps skill
-
----
-
-**Previous Challenge** [← Day 46](Tasks/Day-46.md) 
-
-**Next Challenge:** [Day 48 →](Tasks/Day-48.md)
