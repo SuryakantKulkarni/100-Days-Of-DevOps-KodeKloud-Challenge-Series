@@ -83,7 +83,3 @@ We run this to confirm the secret is mounted and accessible.
 - Mounted secrets are automatically decoded inside containers
 - Secrets can be accessed as files or environment variables
 - Proper secret management is critical for production systems
-
----
-
-**Next Challenge:** [Day 63 →](Tasks/Day-63.md)
