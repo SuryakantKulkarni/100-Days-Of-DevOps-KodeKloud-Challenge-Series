@@ -22,8 +22,6 @@ EOF
 #### Explanation:
 Creates a YAML file using `cat`. We define deployment configuration including replicas and containers.
 
-Copy-Paste content from YAML File: [Day-49 YAML File →](Configs/Day-49-k8s-Deploy-Applications-with-Kubernetes.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/nginx-deployment.yml
