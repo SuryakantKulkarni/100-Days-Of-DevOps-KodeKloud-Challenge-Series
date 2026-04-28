@@ -79,9 +79,3 @@ spec:
 - Labels are important for resource management
 - Basic deployment starts with pods
 - Understanding pods is essential before deployments
-
----
-
-**Previous Challenge** [← Day 47](Tasks/Day-47.md) 
-
-**Next Challenge:** [Day 49 →](Tasks/Day-49.md)
