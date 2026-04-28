@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+        label 'stapp01'
+    }
+    stages {
+        stage('Deploy') {
+            steps {
+                git credentialsId: 'gitea-sarah-creds',
+                    url: 'http://gitea.stratos.xfusioncorp.com/sarah/web_app.git',
+                    branch: 'master'
+                sh '''
+                    sudo cp -r * /var/www/html/
+                    sudo chown -R apache:apache /var/www/html/
+                '''
+            }
+        }
+    }
+}
