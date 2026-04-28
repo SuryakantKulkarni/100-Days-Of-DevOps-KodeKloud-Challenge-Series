@@ -25,8 +25,6 @@ EOF
 #### Explanation
 The `cat` command with `>` creates a YAML file. We run this to define PV, PVC, Pod, and Service configuration in one place.
 
-Copy-Paste content from YAML File: [Day-60 YAML File →](Configs/Day-60-k8s-Persistent-Volumes-in-Kubernetes.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/nautilus-pv.yml
@@ -66,7 +64,7 @@ Shows service endpoints. We run this to confirm the service is correctly connect
 ---
 
 ## Config / YAML
-```bash
+```yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -134,7 +132,3 @@ spec:
 - Proper binding is critical
 - Services require correct labels
 - Storage is essential for real-world apps
-
----
-
-**Next Challenge:** [Day 61 →](Tasks/Day-62.md)
