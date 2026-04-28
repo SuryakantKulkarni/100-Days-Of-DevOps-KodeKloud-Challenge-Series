@@ -38,8 +38,6 @@ EOF
 #### Explanation:
 This command creates a YAML file using `cat`. In this file, we define both the **ConfigMap** and the **Deployment**. Keeping everything in one file makes it easier to manage and deploy all resources together.
 
-Copy-Paste content from YAML File: [Day-65 YAML File →](Configs/Day-65-k8s-Redis-Deployment-on-Kubernetes.yaml)
-
 ### Step 2: Apply the Manifest
 ```bash
 kubectl apply -f /tmp/redis-deployment.yml
@@ -130,7 +128,3 @@ spec:
 - Volumes enable data + config sharing
 - Kubernetes deployments are flexible and scalable
 - Resource requests ensure stability
-
----
-
-Next Challenge: [Day 66 →]()
