@@ -70,8 +70,6 @@ EOF
 #### Explanation:
 Creates a YAML file containing all Kubernetes resources (namespace, deployments, services).
 
-Copy-Paste contents from this [YAML file - Day 63 →](Configs/Day-63-k8s-iron-gallery-deployment.yaml)
-
 ### Step 3: Apply the Manifest
 ```bash
 kubectl apply -f /tmp/iron-gallery.yml
@@ -116,7 +114,3 @@ kubectl get svc -n iron-namespace-xfusion
 - Proper labels are critical for resource connectivity  
 - Resource limits improve stability and performance  
 - Real-world apps always follow multi-tier architecture
-
----
-
-**Next Challenge**: [Day 64 →](Day-64.md)
