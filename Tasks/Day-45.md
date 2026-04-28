@@ -129,7 +129,3 @@ COPY html/index.html /usr/local/apache2/htdocs/
 - Correct file paths are critical in Docker builds  
 - Build context must contain required files  
 - Always verify image after fixing Dockerfile
-
----
-
-**Next Challenge:** [Day 46 →](Tasks/Day-46.md)
