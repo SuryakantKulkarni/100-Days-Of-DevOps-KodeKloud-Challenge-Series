@@ -26,7 +26,7 @@ A python app needs to be Dockerized, and then it needs to be deployed on `App Se
 
 ### Step 1: Connect to Server  
 ```bash
-ssh tony@stapp01.stratos.xfusioncorp.com
+ssh tony@stapp01
 ```
 #### Explanation:
 Establish an SSH connection to Application Server 1 in the Stratos Datacenter. This server contains the Python application source code that needs to be containerized.
