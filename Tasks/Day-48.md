@@ -24,8 +24,6 @@ EOF
 #### Explanation:
 Creates a YAML file using `cat`. We define the pod configuration, container, and labels.
 
-Copy-Paste content from YAML File: [Day-48 YAML File →](Configs/Day-48-k8s-Deploy-Pods-in-Kubernetes.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/pod-httpd.yml
