@@ -78,9 +78,3 @@ spec:
 - Prevents system-wide failures
 - Improves performance and reliability
 - Essential concept in production DevOps
-
----
-
-**Previous Challenge** [← Day 49](Tasks/Day-49.md) 
-
-**Next Challenge:** [Day 51 →](Tasks/Day-51.md)
