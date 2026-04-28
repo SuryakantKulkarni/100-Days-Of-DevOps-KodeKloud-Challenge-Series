@@ -85,9 +85,3 @@ spec:
 - Replace manual pod management
 - Essential for production environments
 - Foundation for advanced Kubernetes concepts
-
----
-
-**Previous Challenge** [← Day 48](Tasks/Day-48.md) 
-
-**Next Challenge:** [Day 50 →](Tasks/Day-50.md)
