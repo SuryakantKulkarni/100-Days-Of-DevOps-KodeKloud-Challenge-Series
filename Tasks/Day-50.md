@@ -26,8 +26,6 @@ EOF
 #### Explanation:
 Creates a YAML file using `cat`. We define pod configuration and resource limits.
 
-Copy-Paste content from YAML File: [Day-50 YAML File →](Configs/Day-50-k8s-Set-Resource-Limits-in-Kubernetes-Pods.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/httpd-pod.yml
