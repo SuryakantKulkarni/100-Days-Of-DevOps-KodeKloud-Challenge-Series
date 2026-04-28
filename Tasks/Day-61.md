@@ -30,8 +30,6 @@ EOF
 #### Explanation:
 The `cat` command with `>` creates a YAML file. We run this to define deployment, init container, main container, and volume configuration.
 
-Copy-Paste the content from this YAML file.
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/ic-deploy-nautilus.yml
@@ -65,7 +63,7 @@ kubectl logs <pod-name> -c ic-main-nautilus
 ---
 
 ## Config/YAML File
-```bash
+```yaml
 kubectl logs → View container output
 Config / YAML
 apiVersion: apps/v1
@@ -107,5 +105,3 @@ spec:
 - Useful for real-world deployment scenarios
 - Volumes enable data sharing between containers
 - Improves modular and clean application setup
-
-Next Challenge: Day 62 →
