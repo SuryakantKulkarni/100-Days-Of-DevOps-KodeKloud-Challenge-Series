@@ -36,8 +36,6 @@ EOF
 #### Explanation:
 The `cat` command with `>` creates a YAML file. We run this to define pod configuration and environment variables.
 
-Copy-Paste content from YAML File: [Day-57 YAML File →](Configs/Day-57-k8s-Print-Environment-Variables.yaml)
-
 ### Step 2: Apply YAML File
 ```bash
 kubectl apply -f /tmp/print-envars-greeting.yml
@@ -65,7 +63,7 @@ kubectl logs -f print-envars-greeting
 ---
 
 ## Config / YAML
-```bash
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -93,7 +91,3 @@ spec:
 - restartPolicy controls pod behavior
 - Logs help verify output quickly
 - This concept is widely used in real DevOps workflows
-
----
-
-**Next Challenge:** [Day 58 →](Tasks/Day-58.md)
