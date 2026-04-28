@@ -58,7 +58,3 @@ Lists all pods. We run this to ensure all pods are running successfully.
 - Monitoring rollout is critical
 - Version upgrades must be verified
 - Essential concept for production deployments
-
----
-
-**Next Challenge:** [Day 52 →](Tasks/Day-52.md)
