@@ -1,0 +1,85 @@
+```yaml
+- name: Configure blog.txt on App Server 1
+  hosts: stapp01
+  become: yes
+  tasks:
+
+    - name: Create directory
+      file:
+        path: /opt/devops
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create blog.txt
+      file:
+        path: /opt/devops/blog.txt
+        state: touch
+        owner: root
+        group: root
+
+    - name: Set ACL for group tony
+      acl:
+        path: /opt/devops/blog.txt
+        entity: tony
+        etype: group
+        permissions: r
+        state: present
+
+- name: Configure story.txt on App Server 2
+  hosts: stapp02
+  become: yes
+  tasks:
+
+    - name: Create directory
+      file:
+        path: /opt/devops
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create story.txt
+      file:
+        path: /opt/devops/story.txt
+        state: touch
+        owner: root
+        group: root
+
+    - name: Set ACL for user steve
+      acl:
+        path: /opt/devops/story.txt
+        entity: steve
+        etype: user
+        permissions: rw
+        state: present
+
+- name: Configure media.txt on App Server 3
+  hosts: stapp03
+  become: yes
+  tasks:
+
+    - name: Create directory
+      file:
+        path: /opt/devops
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create media.txt
+      file:
+        path: /opt/devops/media.txt
+        state: touch
+        owner: root
+        group: root
+
+    - name: Set ACL for group banner
+      acl:
+        path: /opt/devops/media.txt
+        entity: banner
+        etype: group
+        permissions: rw
+        state: present
+```
