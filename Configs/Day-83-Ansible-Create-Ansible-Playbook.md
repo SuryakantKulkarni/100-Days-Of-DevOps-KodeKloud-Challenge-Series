@@ -1,3 +1,4 @@
+```yaml
 - name: Create empty file on App Server 1
   hosts: app
   become: yes
@@ -6,3 +7,4 @@
       file:
         path: /tmp/file.txt
         state: touch
+```
