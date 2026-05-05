@@ -1,0 +1,17 @@
+```yaml
+- name: Install and configure vsftpd on all app servers
+  hosts: app
+  become: yes
+  tasks:
+
+    - name: Install vsftpd package
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: Start and enable vsftpd service
+      service:
+        name: vsftpd
+        state: started
+        enabled: yes
+```
