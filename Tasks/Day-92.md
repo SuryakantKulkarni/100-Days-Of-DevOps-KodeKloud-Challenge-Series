@@ -184,9 +184,4 @@ This file was created using Ansible on stapp03
 - `inventory_hostname` provides target server hostname  
 - `template` module renders variables automatically  
 - Roles organize Ansible tasks efficiently  
-- Automation improves consistency and scalability  
-
----
-
-🚀 **Day 92 Complete – Managing Jinja2 Templates Using Ansible**
-````
+- Automation improves consistency and scalability 
