@@ -1,5 +1,10 @@
-# 🚀 100 Days of DevOps Challenge — KodeKloud
 
+<div align="center">
+  
+# 🚀 100 Days of DevOps Challenge - KodeKloud
+
+</div>
+  
 <div align="center">
 
 [![Days Completed](https://img.shields.io/badge/Days%20Completed-100%2F100-brightgreen?style=for-the-badge&logo=checkmarx)](/)
@@ -65,7 +70,7 @@ No theory dumps. Just real terminal work, real errors, and real fixes.
 
 </div>
 
-> 🔥 **Current Streak: Day 56** — No breaks. No excuses. Just DevOps.
+> 🔥 **Current Streak: Day 100** — No breaks. No excuses. Just DevOps.
 
 | Phase | Days | Focus | Status |
 |-------|------|-------|--------|
