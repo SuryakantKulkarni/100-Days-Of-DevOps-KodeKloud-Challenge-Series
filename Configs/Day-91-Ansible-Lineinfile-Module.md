@@ -1,0 +1,38 @@
+```yaml
+- name: Install httpd and configure webpage
+  hosts: app
+  become: yes
+  tasks:
+
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start and enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Create index.html with initial content
+      copy:
+        content: "This is a Nautilus sample file, created using Ansible!"
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0755'
+
+    - name: Add welcome line at top using lineinfile
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "Welcome to Nautilus Group!"
+        insertbefore: BOF
+
+    - name: Set ownership and permissions
+      file:
+        path: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0755'
+```
