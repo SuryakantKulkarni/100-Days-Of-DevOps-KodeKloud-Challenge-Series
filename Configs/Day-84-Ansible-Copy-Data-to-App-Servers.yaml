@@ -1,4 +1,3 @@
-```yaml
 - name: Copy index.html to all app servers
   hosts: app
   become: yes
@@ -15,4 +14,3 @@
         src: /usr/src/security/index.html
         dest: /opt/security/index.html
 
-```
