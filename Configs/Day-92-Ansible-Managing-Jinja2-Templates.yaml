@@ -1,5 +1,5 @@
 ### Create Task File
-```yaml
+
 - name: Install httpd package
   yum:
     name: httpd
@@ -26,11 +26,10 @@
 ```
 
 ### Playbook File
-```yaml
+
 - name: Run httpd role on App Server 3
   hosts: stapp03
   become: yes
 
   tasks:
     - import_tasks: /home/thor/ansible/role/httpd/tasks/main.yml
-```
