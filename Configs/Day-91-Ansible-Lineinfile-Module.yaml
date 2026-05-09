@@ -1,4 +1,3 @@
-```yaml
 - name: Install httpd and configure webpage
   hosts: app
   become: yes
@@ -35,4 +34,3 @@
         owner: apache
         group: apache
         mode: '0755'
-```
