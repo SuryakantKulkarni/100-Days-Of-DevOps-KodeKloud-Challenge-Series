@@ -1,4 +1,3 @@
-```yaml
 - name: Install chrony on all app servers
   hosts: app
   become: yes
@@ -7,4 +6,3 @@
       yum:
         name: chrony
         state: present
-```
