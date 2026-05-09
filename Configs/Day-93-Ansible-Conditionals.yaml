@@ -1,4 +1,3 @@
-```yaml
 - name: Copy files using Ansible conditionals
   hosts: all
   become: yes
@@ -36,4 +35,3 @@
         group: banner
         mode: '0755'
       when: ansible_nodename == "stapp03"
-```
