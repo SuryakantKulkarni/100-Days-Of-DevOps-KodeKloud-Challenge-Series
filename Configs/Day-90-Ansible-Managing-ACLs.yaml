@@ -1,4 +1,3 @@
-```yaml
 - name: Configure blog.txt on App Server 1
   hosts: stapp01
   become: yes
@@ -82,4 +81,3 @@
         etype: group
         permissions: rw
         state: present
-```
